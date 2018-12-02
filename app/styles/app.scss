@@ -1,15 +1,25 @@
 @import 'ember-burger-menu';
 
-
-
-.mapShow {
-  height: 300px;
-  width: 400px;
-
+body, nav{
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background-color: rgb(32,32,32)
 }
 
-.ember-burger-menu{
-  // height: 300px;
-  // width: 200px;
-  background-color: lightblue;
+a{
+  color: white;
+  text-decoration: none;
+}
+a:hover{
+  color: rgb(145,255,247);
+}
+
+.mapShow {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 400px;
+  width: 400px;
+
 }

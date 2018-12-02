@@ -1,4 +1,7 @@
 import Controller from '@ember/controller';
+import RSVP from 'rsvp';
+import { later } from '@ember/runloop';
+import DS from 'ember-data';
 
 export default Controller.extend({
   actions: {
@@ -12,10 +15,17 @@ export default Controller.extend({
           contact: this.contact,
         });
 
-        post.save().then(() => {
-           this.transitionToRoute('index');
-          //this.transitionToRoute('post', post.id);
-        });
+        post.validate().then(({ validations }) => {
+          if (validations.get('isValid')) {
+            post.save().then(() => {
+               this.transitionToRoute('index');
+              //this.transitionToRoute('post', post.id);
+            });
+
+          }
+        })
+
+
       },
       saveEvent(){
     return new RSVP.Promise((resolve) => {

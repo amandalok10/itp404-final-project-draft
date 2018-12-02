@@ -2,9 +2,13 @@ import EmberRouter from '@ember/routing/router';
 import config from './config/environment';
 import Ember from 'ember';
 
-const Router = EmberRouter.extend({
+const Router = Ember.Router.extend({
   location: config.locationType,
-  rootURL: config.rootURL
+  headData: Ember.inject.service(),
+
+  setTitle(title) {
+     this.get('headData').set('title', title);
+   }
 });
 
 Router.map(function() {

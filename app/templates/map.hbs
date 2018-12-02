@@ -1,4 +1,15 @@
 {{#leaflet-map class="mapShow" lat=lat lng=lng zoom=zoom}}
 {{tile-layer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
 
+{{#each model as |post|}}
+
+
+  {{#marker-layer location=geo}}
+    {{#popup-layer}}
+      <h3>{{post.location}}</h3>
+    {{/popup-layer}}
+  {{/marker-layer}}
+
+{{/each}}
+
 {{/leaflet-map}}
