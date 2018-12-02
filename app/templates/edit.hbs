@@ -1,0 +1,28 @@
+<form onsubmit={{action "editPost" model}}>
+  <div>
+
+    <h1>Edit Event</h1>
+    <hr>
+    <label for="name">Name</label><br>
+    {{input type="text" id="name" value=model.name}}
+  </div>
+
+  <div>
+    <label for="date">Date</label><br>
+    {{input type="text" id="date" value=model.date}}
+  </div>
+
+
+  <div>
+    <label for="location">Location</label><br>
+    {{input type="text" id="location" value=model.location}}
+  </div>
+
+
+  <div>
+    <label for="contact">Contact</label><br>
+      {{input type="text" id="contact" value=model.contact}}
+  </div>
+
+  <button type="submit">Update</button>
+</form>

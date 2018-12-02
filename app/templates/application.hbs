@@ -1,5 +1,28 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+
+
+
+<img width="5%" height="5%" src="https://image.flaticon.com/icons/svg/1272/1272732.svg">
+<nav>
+<br>
+  {{#link-to "create"}}
+  New Event
+  {{/link-to}}
+
+
+
+  {{#link-to "index"}}
+    <br>All Events<br>
+  {{/link-to}}
+
+
+
+  {{#link-to "map"}}
+    Map View <br>
+  {{/link-to}}
+
+  {{#link-to "about"}}
+  About <br>
+  {{/link-to}}
+</nav>
 
 {{outlet}}

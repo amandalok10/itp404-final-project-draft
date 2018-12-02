@@ -1,0 +1,36 @@
+<style>
+form{
+  margin-left: 15%;
+}
+
+</style>
+
+
+<form onsubmit={{action "createPost"}}>
+  <div>
+
+    <h1>New Event</h1>
+    <hr>
+    <label for="name">Name</label><br>
+    {{input type="text" id="name" value=name}}
+  </div>
+
+  <div>
+    <label for="date">Date</label><br>
+    {{input type="text" id="date" value=date}}
+  </div>
+
+
+  <div>
+    <label for="location">Location</label><br>
+    {{input type="text" id="location" value=location}}
+  </div>
+
+
+  <div>
+    <label for="contact">Contact</label><br>
+      {{input type="text" id="contact" value=contact}}
+  </div>
+
+<SavingButton @onClick={{action "saveEvent"}}/>
+</form>
