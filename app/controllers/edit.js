@@ -9,6 +9,17 @@ export default Controller.extend({
       post.save().then(() => {
         this.transitionToRoute('post', post.id);
       });
-    }
+    },
+
+    editEvent(){
+  return new RSVP.Promise((resolve) => {
+    later(() => {
+      resolve();
+
+    }, 2000);
+
+  });
+
+}
   }
 });

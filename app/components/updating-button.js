@@ -5,13 +5,13 @@ import Ember from 'ember';
 
 export default Ember.Component.extend( {
   tagName: 'button',
-  buttonText: 'Submit',
+  buttonText: 'Update',
 
   click(){
 
-      this.set('buttonText', 'Submitting...');
+      this.set('buttonText', 'Updating...');
       this.onClick().then(() => {
-        this.set('buttonText', 'Submit');
+        this.set('buttonText', 'Update');
       })
     }
 

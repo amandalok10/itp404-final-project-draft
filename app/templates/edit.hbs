@@ -24,5 +24,7 @@
       {{input type="text" id="contact" value=model.contact}}
   </div>
 
-  <button type="submit">Update</button>
+  <UpdatingButton @onClick={{action "editEvent"}}/>
+
+  
 </form>
