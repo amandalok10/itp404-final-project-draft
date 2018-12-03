@@ -3,6 +3,8 @@ import { validator, buildValidations } from 'ember-cp-validations';
 
 const { attr } = DS;
 
+
+
 const Validations = buildValidations({
   name: validator('presence', true),
   date: validator('presence', true),

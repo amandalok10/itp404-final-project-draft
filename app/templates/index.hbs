@@ -9,9 +9,20 @@
 
 <div id="body">
 
+
+    <!-- <button type="button" onclick={{action "refreshEvent" model}}>
+       refresh
+     </button> -->
+
   {{liquid-fire}}
 
   {{#each model as |post|}}
+
+
+  <!-- {{#if (eq post.location post.1.location)}}
+    <span>OK</span>
+  {{/if}} -->
+
 
   {{#link-to "post" post.id}}
 
@@ -27,8 +38,6 @@
 
 {{/link-to}}
 
-
-
 {{#link-to "edit" post.id}}
 Edit
 {{/link-to}}
@@ -36,7 +45,5 @@ Edit
 <br>
 {{/each}}
 
-
 </div>
-<!-- {{link-to 'loaderror' 'loaderror'}} -->
 {{outlet}}

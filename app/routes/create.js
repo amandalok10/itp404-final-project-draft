@@ -10,5 +10,6 @@ export default Route.extend({
     controller.set('date', '');
     controller.set('location', '');
     controller.set('contact', '');
+
   }
 });
