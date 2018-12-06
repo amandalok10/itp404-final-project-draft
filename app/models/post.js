@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 import { validator, buildValidations } from 'ember-cp-validations';
 
-const { attr } = DS;
+
 
 
 
@@ -18,5 +18,6 @@ export default DS.Model.extend(Validations,{
   name: DS.attr('string'),
   date: DS.attr('string'),
   location: DS.attr('string'),
-  contact: DS.attr('string')
+  contact: DS.attr('string'),
+
 });

@@ -1,14 +1,18 @@
 import Controller from '@ember/controller';
+import RSVP from 'rsvp';
+import { later } from '@ember/runloop';
+//import DS from 'ember-data';
 
 export default Controller.extend({
   actions: {
     editPost(post, event) {
       event.preventDefault();
 
-      // let post = this.model;
       post.save().then(() => {
-        this.transitionToRoute('post', post.id);
-      });
+        return new Promise(resolve => setTimeout(() => resolve(), 1000));
+      }).then(() => this.transitionToRoute('post', post.id));
+
+
     },
 
     editEvent(){

@@ -1,46 +1,47 @@
 <style>
-form{
-  margin-left: 15%;
-}
+  form {
+    margin-left: 15%;
+  }
 
+  .error {
+    height: 200px;
+    width: 500px;
+    color: red;
+  }
 </style>
-
-
 <form onsubmit={{action "createPost"}}>
-  <div>
 
+  <div>
     <h1>New Event</h1>
     <hr>
     <label for="name">Name</label><br>
-    {{input type="text" id="name" value=name}}
+    {{input type="text" id="name" value=name}}<br>
+    {{#if (v-get model "name" "message")}}
+      <div class="error">
+        {{v-get model "name" "message"}}
+      </div>
+    {{/if}}
   </div>
-
-
-     <div class="error">
-       {{v-get post 'name' 'message'}}
-     </div>
-
-
 
   <div>
     <label for="date">Date</label><br>
     {{input type="text" id="date" value=date}}
   </div>
 
-
   <div>
     <label for="location">Location</label><br>
     {{input type="text" id="location" value=location}}
   </div>
 
-
   <div>
-    <label for="contact">Contact</label><br>
-      {{input type="text" id="contact" value=contact}}
+    <label for="contact">Contact </label> <br>
+    {{input type="text" id="contact" value=contact}}
   </div>
 
-<SavingButton @onClick={{action "saveEvent"}}/>
+  <SavingButton
+    data-test="save"
+    @onClick={{action "saveEvent"}}
+    disabled={{v-get model "isInvalid"}}
+  />
 </form>
-
-
 {{outlet}}

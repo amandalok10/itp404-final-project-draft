@@ -1,49 +1,49 @@
 <style>
 
 
-#body{
+  #body{
   margin-left: 15%;
-}
+  }
+
+
 
 </style>
 
 <div id="body">
 
 
-    <!-- <button type="button" onclick={{action "refreshEvent" model}}>
-       refresh
-     </button> -->
+
 
   {{liquid-fire}}
+
+
 
   {{#each model as |post|}}
 
 
-  <!-- {{#if (eq post.location post.1.location)}}
-    <span>OK</span>
-  {{/if}} -->
+    <div id="card">
 
 
-  {{#link-to "post" post.id}}
+      {{#link-to "post" post.id}}
+        <strong>{{post.name}}</strong> <br> Date: {{post.date}} <br> Location: {{post.location}} <br>
+      {{/link-to}}
 
 
-    <!-- <button type="button" onclick={{action "deletePost" post}}>
-    <img width= "20px" height= "20px"
-    src="https://findicons.com/files/icons/1580/devine_icons_part_2/128/trash_recyclebin_empty_closed.png"
-    alt="Delete">
-  </button> -->
-  <strong>{{post.name}}</strong> |
-  {{post.location}}
+      {{#link-to "edit" post.id}}
+        Edit
+      {{/link-to}}
+      <h1 data-test="event"></h1>
+      <h1 data-test="name"></h1>
+      <h1 data-test="date"></h1>
+      <h1 data-test="location"></h1>
+      <h1 data-test="contact"></h1>
 
 
-{{/link-to}}
+    </div>
 
-{{#link-to "edit" post.id}}
-Edit
-{{/link-to}}
+    <br>
+  {{/each}}
 
-<br>
-{{/each}}
 
 </div>
 {{outlet}}

@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import DS from 'ember-data';
+//import DS from 'ember-data';
 import Ember from 'ember';
 
 

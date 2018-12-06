@@ -21,10 +21,10 @@
 
   <div>
     <label for="contact">Contact</label><br>
-      {{input type="text" id="contact" value=model.contact}}
+    {{input type="text" id="contact" value=model.contact}}
   </div>
 
-  <UpdatingButton @onClick={{action "editEvent"}}/>
+  <UpdatingButton data-test="update" @onClick={{action "editEvent"}}/>
 
-  
+
 </form>

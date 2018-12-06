@@ -12,15 +12,8 @@ module('Integration | Component | saving-button', function(hooks) {
 
     await render(hbs`{{saving-button}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.equal(this.element.textContent.trim(), 'Submit');
 
-    // Template block usage:
-    await render(hbs`
-      {{#saving-button}}
-        template block text
-      {{/saving-button}}
-    `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });

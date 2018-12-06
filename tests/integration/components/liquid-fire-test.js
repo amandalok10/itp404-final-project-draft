@@ -12,15 +12,10 @@ module('Integration | Component | liquid-fire', function(hooks) {
 
     await render(hbs`{{liquid-fire}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.equal(this.element.textContent.trim(), 'All Events');
 
-    // Template block usage:
-    await render(hbs`
-      {{#liquid-fire}}
-        template block text
-      {{/liquid-fire}}
-    `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+
+
   });
 });

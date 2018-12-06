@@ -12,15 +12,8 @@ module('Integration | Component | updating-button', function(hooks) {
 
     await render(hbs`{{updating-button}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.equal(this.element.textContent.trim(), 'Update');
 
-    // Template block usage:
-    await render(hbs`
-      {{#updating-button}}
-        template block text
-      {{/updating-button}}
-    `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });
